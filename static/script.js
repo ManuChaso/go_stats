@@ -44,16 +44,16 @@ ws.onmessage = (event) => {
   // CPU y memoria
   updateChart(cpuChart, now, stats.cpu[0]);
   const cpuTitle = document.getElementById('cpu_usage')
-  cpuTitle.textContent = Math.floor(stats.cpu[0]);
+  cpuTitle.textContent = Math.floor(stats.cpu[0] * 100) / 100;
   updateChart(memChart, now, stats.memory.usedPercent);
   const memoryTitle = document.getElementById('memory_usage')
-  memoryTitle.textContent = stats.memory.usedPercent;
+  memoryTitle.textContent = Math.floor(stats.memory.usedPercent * 100) / 100;
 
   // Disco (primer disco o raíz)
   if (stats.disk.length > 0) {
     updateChart(diskChart, now, stats.disk[0].usedPercent);
     const diskTitle = document.getElementById('disk_usage')
-    diskTitle.textContent = Math.floor(stats.disk[0].usedPercent);
+    diskTitle.textContent = Math.floor(stats.disk[0].usedPercent * 100) / 100;
   }
 
   // Red (si tenemos valores previos, calculamos KB/s)
