@@ -47,7 +47,7 @@ ws.onmessage = (event) => {
   cpuTitle.textContent = Math.floor(stats.cpu[0] * 100) / 100;
   updateChart(memChart, now, stats.memory.usedPercent);
   const memoryTitle = document.getElementById('memory_usage')
-  memoryTitle.textContent = Math.floor(stats.memory.usedPercent * 100) / 100;
+  memoryTitle.textContent = (Math.floor(stats.memory.usedPercent * 100) / 100).toFixed(2);
 
   // Disco (primer disco o raíz)
   if (stats.disk.length > 0) {
