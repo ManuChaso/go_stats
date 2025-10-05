@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor del Servidor</title>
+  <script src="chart.umd.min.js"></script>
+  <script src="script.js" defer></script>
+  <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: sans-serif;
+        margin: 20px;
+        background: #f8f9fa; 
+    }
+    .row {
+        display: flex;
+        justify-content: space-around;
+    }
+    h2 { margin-top: 40px; }
+    .chart-container { width: 500px; margin-bottom: 50px; }
+  </style>
+</head>
+<body>
+  <h1>Dashboard en tiempo real</h1>
+
+  <div class="row">
+    <div class="chart-container">
+        <h2>Uso de CPU (<span id="cpu_usage"></span>%)</h2>
+        <canvas id="cpuChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Uso de Memoria (<span id="memory_usage"></span>%)</h2>
+        <canvas id="memChart"></canvas>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="chart-container">
+        <h2>Uso de Disco (<span id="disk_usage"></span>%)</h2>
+        <canvas id="diskChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Tráfico de Red (<span id="net_usage"></span>Kb/s)</h2>
+        <canvas id="netChart"></canvas>
+    </div>
+  </div>
+  
+</body>
+</html>
